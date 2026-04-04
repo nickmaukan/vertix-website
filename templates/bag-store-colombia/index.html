@@ -1,0 +1,2884 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bagou Colombia - Bolsos y Carteras con Estilo Latino</title>
+    <meta name="description" content="Tienda online de bolsos, carteras, mochilas y accesorios en Colombia. Diseños exclusivos, cuero genuino y sintético. Envío gratis +30%. Pago seguro.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Warm Elegant Palette - inspired by leather tones */
+            --primary: #8B5A2B;        /* Saddle Brown */
+            --primary-dark: #6B4423;
+            --primary-light: #A67B5B;
+            --secondary: #D4A574;       /* Tan/Camel */
+            --accent: #C9A86C;          /* Gold accent */
+            --accent-rose: #B76E79;     /* dusty rose */
+            
+            --success: #2D8B5A;
+            --danger: #C45C5C;
+            --warning: #D4A574;
+            
+            --bg-cream: #FAF7F2;
+            --bg-warm: #F5EDE4;
+            --bg-dark: #2C1810;
+            --surface: #FFFFFF;
+            --surface-warm: #FFF9F5;
+            
+            --text-primary: #2C1810;
+            --text-secondary: #6B5B4F;
+            --text-muted: #9A8B7D;
+            --text-light: #D4C5B5;
+            
+            --border: #E8DDD4;
+            --border-dark: #C9B8A5;
+            
+            --shadow-sm: 0 1px 3px rgba(44, 24, 16, 0.06);
+            --shadow-md: 0 4px 12px rgba(44, 24, 16, 0.08);
+            --shadow-lg: 0 10px 30px rgba(44, 24, 16, 0.12);
+            --shadow-xl: 0 20px 50px rgba(44, 24, 16, 0.15);
+            
+            --radius-xs: 4px;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --radius-full: 9999px;
+            
+            --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-spring: 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: var(--bg-cream);
+            color: var(--text-primary);
+            line-height: 1.65;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', Georgia, serif;
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        /* ============ HEADER ============ */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: all 0.4s ease;
+            background: transparent;
+            padding: 20px 0;
+        }
+
+        .header.scrolled {
+            background: rgba(255, 249, 245, 0.96);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: var(--shadow-sm);
+            padding: 14px 0;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(145deg, var(--primary), var(--primary-dark));
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .logo-text span {
+            color: var(--primary);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.925rem;
+            position: relative;
+            padding: 4px 0;
+            transition: color var(--transition);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .icon-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            color: var(--text-primary);
+            border-radius: var(--radius-sm);
+            transition: all var(--transition);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon-btn:hover {
+            background: var(--bg-warm);
+            color: var(--primary);
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            background: var(--primary);
+            color: white;
+            font-size: 0.65rem;
+            font-weight: 700;
+            min-width: 18px;
+            height: 18px;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: scale(0);
+            transition: all var(--transition-spring);
+        }
+
+        .cart-badge.show {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all var(--transition);
+            border: none;
+            font-family: inherit;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 2px 8px rgba(139, 90, 43, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 90, 43, 0.35);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-sm {
+            padding: 9px 18px;
+            font-size: 0.85rem;
+        }
+
+        .btn-lg {
+            padding: 16px 36px;
+            font-size: 1rem;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            color: var(--text-primary);
+        }
+
+        /* ============ HERO ============ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(160deg, #FAF7F2 0%, #F5EDE4 40%, #EDE3D6 100%);
+        }
+
+        .hero-bg-shapes {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .hero-shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.15;
+        }
+
+        .hero-shape-1 {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--secondary) 0%, transparent 70%);
+            top: -200px;
+            right: -100px;
+            animation: floatShape 20s ease-in-out infinite;
+        }
+
+        .hero-shape-2 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, var(--accent-rose) 0%, transparent 70%);
+            bottom: -100px;
+            left: -100px;
+            animation: floatShape 15s ease-in-out infinite reverse;
+        }
+
+        .hero-shape-3 {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+            top: 30%;
+            left: 50%;
+            animation: floatShape 12s ease-in-out infinite 2s;
+        }
+
+        @keyframes floatShape {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -30px) scale(1.05); }
+            66% { transform: translate(-20px, 20px) scale(0.95); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 80px;
+            align-items: center;
+            padding: 120px 0 80px;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(139, 90, 43, 0.1);
+            color: var(--primary);
+            padding: 8px 18px;
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .hero-tag svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+            letter-spacing: -0.03em;
+        }
+
+        .hero-text h1 .highlight {
+            color: var(--primary);
+            position: relative;
+        }
+
+        .hero-text h1 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: var(--secondary);
+            opacity: 0.4;
+            border-radius: 4px;
+            z-index: -1;
+        }
+
+        .hero-text p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            max-width: 480px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image-container {
+            position: relative;
+            width: 100%;
+            max-width: 460px;
+        }
+
+        .hero-image-main {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .hero-image-float {
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            border: 4px solid white;
+        }
+
+        .hero-image-float-1 {
+            bottom: -30px;
+            left: -40px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero-image-float-2 {
+            top: 40px;
+            right: -30px;
+            animation: float 8s ease-in-out infinite 1s;
+            width: 120px;
+            height: 120px;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+
+        .hero-trust {
+            display: flex;
+            gap: 32px;
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+        }
+
+        .trust-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .trust-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .trust-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        /* ============ MARQUEE STRIP ============ */
+        .marquee-strip {
+            background: var(--primary);
+            color: white;
+            padding: 14px 0;
+            overflow: hidden;
+        }
+
+        .marquee-track {
+            display: flex;
+            gap: 60px;
+            animation: marquee 30s linear infinite;
+            white-space: nowrap;
+        }
+
+        .marquee-track span {
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .marquee-track span::before {
+            content: '✦';
+            font-size: 0.6rem;
+            opacity: 0.6;
+        }
+
+        @keyframes marquee {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        /* ============ CATEGORIES ============ */
+        .categories {
+            padding: 80px 0;
+            background: var(--surface);
+        }
+
+        .categories-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 14px;
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .category-card {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            cursor: pointer;
+            aspect-ratio: 3/4;
+            background: var(--bg-warm);
+        }
+
+        .category-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .category-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .category-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(44, 24, 16, 0.85) 0%, rgba(44, 24, 16, 0.1) 60%, transparent 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 24px;
+            transition: background 0.3s ease;
+        }
+
+        .category-card:hover .category-overlay {
+            background: linear-gradient(to top, rgba(44, 24, 16, 0.9) 0%, rgba(44, 24, 16, 0.2) 70%, transparent 100%);
+        }
+
+        .category-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 4px;
+        }
+
+        .category-count {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .category-arrow {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 36px;
+            height: 36px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .category-card:hover .category-arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* ============ PRODUCTS ============ */
+        .products {
+            padding: 80px 0 100px;
+            background: var(--bg-cream);
+        }
+
+        .products-header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            margin-bottom: 48px;
+            gap: 24px;
+        }
+
+        .products-header-left {
+            flex: 1;
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-tab {
+            padding: 10px 22px;
+            background: var(--surface);
+            border: 2px solid var(--border);
+            border-radius: var(--radius-full);
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all var(--transition);
+        }
+
+        .filter-tab:hover {
+            border-color: var(--primary-light);
+            color: var(--primary);
+        }
+
+        .filter-tab.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .product-card {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            transform: translateY(24px);
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        .product-card:nth-child(1) { animation-delay: 0ms; }
+        .product-card:nth-child(2) { animation-delay: 60ms; }
+        .product-card:nth-child(3) { animation-delay: 120ms; }
+        .product-card:nth-child(4) { animation-delay: 180ms; }
+        .product-card:nth-child(5) { animation-delay: 240ms; }
+        .product-card:nth-child(6) { animation-delay: 300ms; }
+        .product-card:nth-child(7) { animation-delay: 360ms; }
+        .product-card:nth-child(8) { animation-delay: 420ms; }
+
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .product-card.hidden {
+            display: none;
+        }
+
+        .product-image {
+            position: relative;
+            aspect-ratio: 1;
+            background: linear-gradient(145deg, var(--bg-warm), var(--bg-cream));
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.06);
+        }
+
+        .product-badges {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .badge {
+            padding: 5px 12px;
+            border-radius: var(--radius-full);
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .badge-new {
+            background: var(--primary);
+            color: white;
+        }
+
+        .badge-sale {
+            background: var(--danger);
+            color: white;
+        }
+
+        .badge-hot {
+            background: var(--warning);
+            color: var(--text-primary);
+        }
+
+        .product-quick-actions {
+            position: absolute;
+            bottom: 14px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            opacity: 0;
+            display: flex;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover .product-quick-actions {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .quick-action-btn {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition);
+        }
+
+        .quick-action-btn:hover {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-category {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .product-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .product-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-bottom: 14px;
+        }
+
+        .feature-tag {
+            font-size: 0.68rem;
+            color: var(--text-muted);
+            background: var(--bg-cream);
+            padding: 3px 8px;
+            border-radius: var(--radius-xs);
+        }
+
+        .product-price-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .product-price {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .price-current {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .price-old {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            text-decoration: line-through;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .product-actions .btn {
+            flex: 1;
+            padding: 10px 14px;
+            font-size: 0.8rem;
+        }
+
+        .product-actions .btn-icon {
+            padding: 10px;
+            flex: 0;
+        }
+
+        /* ============ BANNER / FEATURED ============ */
+        .featured-banner {
+            padding: 100px 0;
+            background: var(--bg-dark);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(212, 165, 116, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .featured-content {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .featured-text {
+            color: white;
+        }
+
+        .featured-text .section-label {
+            color: var(--accent);
+        }
+
+        .featured-text .section-title {
+            color: white;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 20px;
+        }
+
+        .featured-text p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 36px;
+            line-height: 1.8;
+        }
+
+        .featured-list {
+            list-style: none;
+            margin-bottom: 36px;
+        }
+
+        .featured-list li {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 10px 0;
+            color: rgba(255,255,255,0.85);
+            font-size: 0.95rem;
+        }
+
+        .featured-list li svg {
+            width: 20px;
+            height: 20px;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .featured-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .featured-img {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+        }
+
+        .featured-img img {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+        }
+
+        .featured-img:first-child {
+            grid-row: span 2;
+        }
+
+        .featured-img img {
+            transition: transform 0.5s ease;
+        }
+
+        .featured-img:hover img {
+            transform: scale(1.05);
+        }
+
+        /* ============ BENEFITS ============ */
+        .benefits {
+            padding: 80px 0;
+            background: var(--surface-warm);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .benefit-card {
+            text-align: center;
+            padding: 36px 24px;
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            transition: all var(--transition);
+        }
+
+        .benefit-card:hover {
+            border-color: var(--primary-light);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+        }
+
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(145deg, var(--bg-warm), var(--bg-cream));
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            transition: all var(--transition);
+        }
+
+        .benefit-card:hover .benefit-icon {
+            background: linear-gradient(145deg, var(--primary), var(--primary-dark));
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .benefit-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .benefit-card p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* ============ TESTIMONIALS ============ */
+        .testimonials {
+            padding: 100px 0;
+            background: var(--bg-cream);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            transition: all var(--transition);
+        }
+
+        .testimonial-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+
+        .testimonial-stars {
+            color: var(--accent);
+            font-size: 1rem;
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-text {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .author-avatar {
+            width: 46px;
+            height: 46px;
+            background: linear-gradient(145deg, var(--secondary), var(--primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .author-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+        }
+
+        .author-location {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .verified-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.72rem;
+            color: var(--success);
+            margin-top: 2px;
+        }
+
+        /* ============ INSTAGRAM ============ */
+        .instagram {
+            padding: 80px 0;
+            background: var(--surface);
+        }
+
+        .instagram-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .instagram-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 4px;
+        }
+
+        .insta-item {
+            aspect-ratio: 1;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .insta-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .insta-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .insta-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(139, 90, 43, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .insta-item:hover .insta-overlay {
+            opacity: 1;
+        }
+
+        .insta-overlay svg {
+            width: 28px;
+            height: 28px;
+            color: white;
+        }
+
+        /* ============ FAQ ============ */
+        .faq {
+            padding: 100px 0;
+            background: var(--bg-cream);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .faq-intro {
+            padding-top: 20px;
+        }
+
+        .faq-intro .section-label {
+            text-align: left;
+            margin-bottom: 16px;
+        }
+
+        .faq-intro h2 {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+
+        .faq-intro p {
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        .faq-contact-card {
+            background: var(--primary);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            color: white;
+        }
+
+        .faq-contact-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .faq-contact-card p {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            margin-bottom: 16px;
+        }
+
+        .faq-contact-card a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            color: var(--primary);
+            padding: 10px 20px;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-decoration: none;
+            transition: all var(--transition);
+        }
+
+        .faq-contact-card a:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .faq-question {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 0;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            font-size: 0.975rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            gap: 20px;
+            font-family: inherit;
+        }
+
+        .faq-question:hover {
+            color: var(--primary);
+        }
+
+        .faq-icon {
+            width: 28px;
+            height: 28px;
+            flex-shrink: 0;
+            background: var(--bg-warm);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .faq-icon svg {
+            width: 14px;
+            height: 14px;
+            color: var(--primary);
+        }
+
+        .faq-item.open .faq-icon {
+            background: var(--primary);
+            transform: rotate(45deg);
+        }
+
+        .faq-item.open .faq-icon svg {
+            color: white;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 300px;
+        }
+
+        .faq-answer p {
+            padding-bottom: 20px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.75;
+        }
+
+        /* ============ NEWSLETTER ============ */
+        .newsletter {
+            padding: 80px 0;
+            background: linear-gradient(145deg, var(--primary), var(--primary-dark));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .newsletter::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .newsletter-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
+        .newsletter-text {
+            color: white;
+            max-width: 500px;
+        }
+
+        .newsletter-text h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .newsletter-text p {
+            font-size: 0.95rem;
+            opacity: 0.85;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 12px;
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 14px 20px;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: var(--radius-sm);
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: all var(--transition);
+        }
+
+        .newsletter-form input::placeholder {
+            color: rgba(255,255,255,0.6);
+        }
+
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: rgba(255,255,255,0.5);
+            background: rgba(255,255,255,0.15);
+        }
+
+        .newsletter-form .btn {
+            background: white;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .newsletter-form .btn:hover {
+            background: var(--bg-cream);
+            transform: translateY(-2px);
+        }
+
+        .newsletter-perks {
+            display: flex;
+            gap: 24px;
+            margin-top: 16px;
+            justify-content: center;
+        }
+
+        .newsletter-perks span {
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.7);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* ============ FOOTER ============ */
+        .footer {
+            background: var(--bg-dark);
+            color: white;
+            padding: 80px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand .logo {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .footer-brand .logo-text {
+            color: white;
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.55);
+            font-size: 0.9rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.08);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-col h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: all var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 4px;
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            color: rgba(255,255,255,0.4);
+            font-size: 0.82rem;
+        }
+
+        .footer-payments {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .payment-icon {
+            width: 42px;
+            height: 26px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6rem;
+            color: rgba(255,255,255,0.6);
+            font-weight: 700;
+        }
+
+        /* ============ CART PANEL ============ */
+        .cart-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(44, 24, 16, 0.5);
+            backdrop-filter: blur(4px);
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .cart-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .cart-panel {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 440px;
+            max-width: 100%;
+            background: var(--surface);
+            z-index: 2001;
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            box-shadow: -10px 0 40px rgba(0,0,0,0.15);
+        }
+
+        .cart-panel.show {
+            transform: translateX(0);
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 28px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cart-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .cart-count {
+            background: var(--primary);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: var(--radius-full);
+        }
+
+        .cart-close {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            color: var(--text-secondary);
+            border-radius: var(--radius-sm);
+            transition: all var(--transition);
+        }
+
+        .cart-close:hover {
+            background: var(--bg-warm);
+            color: var(--text-primary);
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px 28px;
+        }
+
+        .cart-items::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .cart-items::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 4px;
+        }
+
+        .cart-empty {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            text-align: center;
+            color: var(--text-secondary);
+            padding: 40px 0;
+        }
+
+        .cart-empty-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--bg-warm);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .cart-empty h3 {
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+            color: var(--text-primary);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .cart-empty p {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 16px;
+            padding: 18px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cart-item-image {
+            width: 90px;
+            height: 90px;
+            background: var(--bg-warm);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .cart-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cart-item-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .cart-item-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .cart-item-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            line-height: 1.3;
+        }
+
+        .cart-item-price {
+            font-size: 0.9rem;
+            color: var(--primary);
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .cart-item-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .qty-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--bg-cream);
+            border-radius: var(--radius-sm);
+            padding: 4px;
+        }
+
+        .qty-btn {
+            width: 28px;
+            height: 28px;
+            border: none;
+            background: var(--surface);
+            border-radius: var(--radius-xs);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: var(--text-primary);
+            transition: all var(--transition);
+        }
+
+        .qty-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .cart-item-qty {
+            font-weight: 700;
+            min-width: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .cart-item-remove {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--danger);
+            font-size: 0.78rem;
+            padding: 4px 8px;
+            border-radius: var(--radius-xs);
+            transition: all var(--transition);
+        }
+
+        .cart-item-remove:hover {
+            background: rgba(196, 92, 92, 0.1);
+        }
+
+        .cart-footer {
+            padding: 24px 28px;
+            border-top: 1px solid var(--border);
+            background: var(--bg-cream);
+        }
+
+        .cart-subtotal {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .cart-subtotal span {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .cart-subtotal strong {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--text-primary);
+        }
+
+        .cart-shipping-note {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .cart-footer .btn {
+            width: 100%;
+            padding: 15px;
+            font-size: 0.95rem;
+        }
+
+        /* ============ TOAST ============ */
+        .toast-container {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 3000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            pointer-events: none;
+        }
+
+        .toast {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--bg-dark);
+            color: white;
+            padding: 14px 20px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-xl);
+            animation: toastIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            pointer-events: all;
+            min-width: 280px;
+        }
+
+        .toast.hide {
+            animation: toastOut 0.3s ease forwards;
+        }
+
+        @keyframes toastIn {
+            from { opacity: 0; transform: translateX(60px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes toastOut {
+            to { opacity: 0; transform: translateX(60px); }
+        }
+
+        .toast-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .toast-icon svg {
+            width: 12px;
+            height: 12px;
+        }
+
+        .toast-message {
+            font-size: 0.875rem;
+            font-weight: 500;
+            flex: 1;
+        }
+
+        /* ============ MOBILE MENU ============ */
+        .mobile-menu {
+            position: fixed;
+            inset: 0;
+            background: var(--bg-dark);
+            z-index: 1500;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 28px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu .nav-link {
+            font-size: 1.4rem;
+            color: white;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 1100px) {
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 48px;
+            }
+            .hero-text p { margin: 0 auto 36px; }
+            .hero-buttons { justify-content: center; }
+            .hero-trust { justify-content: center; }
+            .hero-image-wrapper { display: none; }
+            
+            .categories-grid { grid-template-columns: repeat(2, 1fr); }
+            .products-grid { grid-template-columns: repeat(2, 1fr); }
+            .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+            .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+            .featured-content { grid-template-columns: 1fr; }
+            .featured-images { max-width: 400px; margin: 0 auto; }
+            .faq-grid { grid-template-columns: 1fr; gap: 48px; }
+            .newsletter-content { flex-direction: column; text-align: center; }
+            .newsletter-perks { justify-content: center; }
+        }
+
+        @media (max-width: 768px) {
+            .nav { display: none; }
+            .header-actions .btn:not(.cart-btn) { display: none; }
+            .mobile-menu-btn { display: block; }
+            
+            .hero { min-height: auto; padding: 120px 0 60px; }
+            .hero-stats { flex-direction: column; gap: 16px; }
+            .stat { text-align: center; }
+            
+            .products-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+            .products-header { flex-direction: column; align-items: flex-start; }
+            .filter-tabs { gap: 6px; }
+            .filter-tab { padding: 8px 16px; font-size: 0.8rem; }
+            
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+            .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+            .newsletter-form { flex-direction: column; }
+            
+            .cart-panel { width: 100%; }
+            .toast-container { left: 16px; right: 16px; bottom: 16px; }
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 0 16px; }
+            .categories-grid { grid-template-columns: 1fr; }
+            .products-grid { grid-template-columns: 1fr; }
+            .benefits-grid { grid-template-columns: 1fr; }
+            .instagram-grid { grid-template-columns: repeat(3, 1fr); }
+            .hero-buttons .btn { width: 100%; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="#" class="logo">
+                    <div class="logo-icon">👜</div>
+                    <span class="logo-text">Bago<span>u</span></span>
+                </a>
+                <nav class="nav">
+                    <a href="#inicio" class="nav-link">Inicio</a>
+                    <a href="#colecciones" class="nav-link">Colecciones</a>
+                    <a href="#productos" class="nav-link">Bolsos</a>
+                    <a href="#ofertas" class="nav-link">Ofertas</a>
+                    <a href="#nosotros" class="nav-link">Nosotros</a>
+                    <a href="#faq" class="nav-link">Ayuda</a>
+                </nav>
+                <div class="header-actions">
+                    <button class="icon-btn" aria-label="Buscar">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </button>
+                    <button class="icon-btn" aria-label="Favoritos">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    </button>
+                    <button class="icon-btn" id="cartBtn" aria-label="Carrito">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                        <span class="cart-badge" id="cartBadge">0</span>
+                    </button>
+                    <a href="#productos" class="btn btn-primary btn-sm">Ver Colección</a>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menú">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileMenuClose">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <a href="#inicio" class="nav-link">Inicio</a>
+        <a href="#colecciones" class="nav-link">Colecciones</a>
+        <a href="#productos" class="nav-link">Bolsos</a>
+        <a href="#ofertas" class="nav-link">Ofertas</a>
+        <a href="#nosotros" class="nav-link">Nosotros</a>
+        <a href="#faq" class="nav-link">Ayuda</a>
+        <a href="#productos" class="btn btn-white btn-lg">Ver Colección</a>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero" id="inicio">
+        <div class="hero-bg-shapes">
+            <div class="hero-shape hero-shape-1"></div>
+            <div class="hero-shape hero-shape-2"></div>
+            <div class="hero-shape hero-shape-3"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-tag">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        Nueva Colección 2026
+                    </div>
+                    <h1>Bolsos con <span class="highlight">Estilo</span> Latino</h1>
+                    <p>Diseños exclusivos que combinan elegancia y versatilidad. Cuero genuino y sintético premium para cada ocasión. Envío gratis en pedidos desde $150.000 COP.</p>
+                    <div class="hero-buttons">
+                        <a href="#productos" class="btn btn-primary btn-lg">Ver Colección</a>
+                        <a href="#ofertas" class="btn btn-secondary btn-lg">Ofertas del Mes</a>
+                    </div>
+                    <div class="hero-trust">
+                        <div class="trust-item">
+                            <span class="trust-value">+12.000</span>
+                            <span class="trust-label">Clientes satisfechas</span>
+                        </div>
+                        <div class="trust-item">
+                            <span class="trust-value">300+</span>
+                            <span class="trust-label">Diseños exclusivos</span>
+                        </div>
+                        <div class="trust-item">
+                            <span class="trust-value">Envío</span>
+                            <span class="trust-label">Gratis +$150K</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper">
+                    <div class="hero-image-container">
+                        <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&h=800&fit=crop&q=80" alt="Bolsos Bagou" class="hero-image-main">
+                        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=200&h=200&fit=crop&q=80" alt="Cartera elegante" class="hero-image-float hero-image-float-1">
+                        <img src="https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=180&h=180&fit=crop&q=80" alt="Bolso moderno" class="hero-image-float hero-image-float-2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marquee Strip -->
+    <div class="marquee-strip">
+        <div class="marquee-track">
+            <span>Envío Gratis +$150.000 COP</span>
+            <span>Cuero 100% Genuino</span>
+            <span>Diseño Colombiano</span>
+            <span>Garantía 6 Meses</span>
+            <span>Pago Contra Entrega</span>
+            <span>12 Cuotas Sin Interés</span>
+            <span>Envío Gratis +$150.000 COP</span>
+            <span>Cuero 100% Genuino</span>
+            <span>Diseño Colombiano</span>
+            <span>Garantía 6 Meses</span>
+            <span>Pago Contra Entrega</span>
+            <span>12 Cuotas Sin Interés</span>
+        </div>
+    </div>
+
+    <!-- Categories -->
+    <section class="categories" id="colecciones">
+        <div class="container">
+            <div class="categories-header">
+                <span class="section-label">Explora por Estilo</span>
+                <h2 class="section-title">Nuestras Colecciones</h2>
+                <p class="section-subtitle">Encuentra el bolso perfecto para cada momento de tu vida</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card" onclick="filterProducts('carteras')">
+                    <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=400&h=600&fit=crop&q=80" alt="Carteras">
+                    <div class="category-overlay">
+                        <h3 class="category-name">Carteras</h3>
+                        <p class="category-count">48 diseños</p>
+                    </div>
+                    <div class="category-arrow">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </div>
+                </div>
+                <div class="category-card" onclick="filterProducts('mochilas')">
+                    <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=600&fit=crop&q=80" alt="Mochilas">
+                    <div class="category-overlay">
+                        <h3 class="category-name">Mochilas</h3>
+                        <p class="category-count">36 diseños</p>
+                    </div>
+                    <div class="category-arrow">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </div>
+                </div>
+                <div class="category-card" onclick="filterProducts('bandoleras')">
+                    <img src="https://images.unsplash.com/photo-1591561954557-26941169b49e?w=400&h=600&fit=crop&q=80" alt="Bandoleras">
+                    <div class="category-overlay">
+                        <h3 class="category-name">Bandoleras</h3>
+                        <p class="category-count">42 diseños</p>
+                    </div>
+                    <div class="category-arrow">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </div>
+                </div>
+                <div class="category-card" onclick="filterProducts('totebags')">
+                    <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=400&h=600&fit=crop&q=80" alt="Tote Bags">
+                    <div class="category-overlay">
+                        <h3 class="category-name">Tote Bags</h3>
+                        <p class="category-count">28 diseños</p>
+                    </div>
+                    <div class="category-arrow">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products" id="productos">
+        <div class="container">
+            <div class="products-header">
+                <div class="products-header-left">
+                    <span class="section-label">Bestsellers</span>
+                    <h2 class="section-title">Los Más Vendidos</h2>
+                </div>
+                <div class="filter-tabs" id="filterTabs">
+                    <button class="filter-tab active" data-filter="all">Todos</button>
+                    <button class="filter-tab" data-filter="carteras">Carteras</button>
+                    <button class="filter-tab" data-filter="mochilas">Mochilas</button>
+                    <button class="filter-tab" data-filter="bandoleras">Bandoleras</button>
+                    <button class="filter-tab" data-filter="totebags">Tote Bags</button>
+                    <button class="filter-tab" data-filter="ofertas">Ofertas</button>
+                </div>
+            </div>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products injected by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Banner -->
+    <section class="featured-banner" id="ofertas">
+        <div class="container">
+            <div class="featured-content">
+                <div class="featured-text">
+                    <span class="section-label">Edición Limitada</span>
+                    <h2 class="section-title">Colección Artisan: Cuero Hecho a Mano</h2>
+                    <p>Cada bolso de nuestra colección Artisan está cuidadosamente elaborado por artesanos colombianos. Cuero genuino, costados reforzados y diseño atemporal que dura años.</p>
+                    <ul class="featured-list">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Cuero vacuno 100% genuino
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Acabados en níquel sólido
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Forro interno repelente al agua
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Garantía de 6 meses por defecto de fábrica
+                        </li>
+                    </ul>
+                    <a href="#productos" class="btn btn-white btn-lg">Descubrir Colección</a>
+                </div>
+                <div class="featured-images">
+                    <div class="featured-img">
+                        <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=500&h=700&fit=crop&q=80" alt="Colección Artisan">
+                    </div>
+                    <div class="featured-img">
+                        <img src="https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=300&h=300&fit=crop&q=80" alt="Bolso detalle">
+                    </div>
+                    <div class="featured-img">
+                        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=300&h=300&fit=crop&q=80" alt="Accesorios cuero">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits">
+        <div class="container">
+            <div class="categories-header">
+                <span class="section-label">¿Por Qué Bagou?</span>
+                <h2 class="section-title">Tu Satisfacción es Nuestra Prioridad</h2>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🛡️</div>
+                    <h3>Garantía 6 Meses</h3>
+                    <p>Todos nuestros productos tienen garantía contra defectos de fábrica. Si algo sale mal, lo resolvemos.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🚚</div>
+                    <h3>Envío Gratis +$150K</h3>
+                    <p>Envío express a toda Colombia en 2-5 días hábiles. Gratis en pedidos superiores a $150.000 COP.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💳</div>
+                    <h3>Pago Contra Entrega</h3>
+                    <p>Puedes pagar cuando recibas tu bolso en casa. Sin anticipos. Sin riesgos. Solo pagas al recibir.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">↩️</div>
+                    <h3>Devolución 15 Días</h3>
+                    <p>¿No te gustó? Tienes 15 días para devolverlo. Te devolvemos el 100% de tu dinero sin preguntas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="categories-header">
+                <span class="section-label">Testimonios</span>
+                <h2 class="section-title">Lo Que Dicen Nuestras Clientes</h2>
+                <p class="section-subtitle">Miles de mujeres colombianas ya confían en Bagou</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"El bolso Artisan llegó exactamente como en las fotos. El cuero es hermoso y muy bien cosido. Ya es mi tercero con Bagou. ¡Son increíbles!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">CM</div>
+                        <div>
+                            <div class="author-name">Carolina M.</div>
+                            <div class="author-location">Bogotá</div>
+                            <div class="verified-badge">
+                                <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                Compra verificada
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Compré una mochila para mi universidad y es Espectacular. Mucho espacio, compartimentos prácticos y el diseño es super elegante. Recomendada al 100%."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">VP</div>
+                        <div>
+                            <div class="author-name">Valentina P.</div>
+                            <div class="author-location">Medellín</div>
+                            <div class="verified-badge">
+                                <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                Compra verificada
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"El pago contra entrega me dio mucha confianza. Me llegó en 3 días a Cali. El bolso es tal cual las fotos. Ya estoy buscando mi próximo compra."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AG</div>
+                        <div>
+                            <div class="author-name">Andrea G.</div>
+                            <div class="author-location">Cali</div>
+                            <div class="verified-badge">
+                                <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                Compra verificada
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram -->
+    <section class="instagram">
+        <div class="container">
+            <div class="instagram-header">
+                <span class="section-label">Síguenos</span>
+                <h2 class="section-title">@bagou.colombia</h2>
+                <p class="section-subtitle">Inspírate y descubre nuevas tendencias cada día</p>
+            </div>
+        </div>
+        <div class="instagram-grid">
+            <div class="insta-item">
+                <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=300&h=300&fit=crop&q=80" alt="Instagram">
+                <div class="insta-overlay">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                </div>
+            </div>
+            <div class="insta-item">
+                <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=300&h=300&fit=crop&q=80" alt="Instagram">
+                <div class="insta-overlay">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                </div>
+            </div>
+            <div class="insta-item">
+                <img src="https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=300&h=300&fit=crop&q=80" alt="Instagram">
+                <div class="insta-overlay">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                </div>
+            </div>
+            <div class="insta-item">
+                <img src="https://images.unsplash.com/photo-1591561954557-26941169b49e?w=300&h=300&fit=crop&q=80" alt="Instagram">
+                <div class="insta-overlay">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                </div>
+            </div>
+            <div class="insta-item">
+                <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=300&h=300&fit=crop&q=80" alt="Instagram">
+                <div class="insta-overlay">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78    6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                </div>
+            </div>
+            <div class="insta-item">
+                <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&h=300&fit=crop&q=80" alt="Instagram">
+                <div class="insta-overlay">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="faq-grid">
+                <div class="faq-intro">
+                    <span class="section-label">Preguntas Frecuentes</span>
+                    <h2 class="section-title">Resolvemos Tus Dudas</h2>
+                    <p>¿Tienes preguntas? Aquí encontrarás respuestas a las dudas más comunes de nuestras clientas.</p>
+                    <div class="faq-contact-card">
+                        <h4>¿No encontraste tu respuesta?</h4>
+                        <p>Escríbenos directamente por WhatsApp y te respondemos en minutos.</p>
+                        <a href="https://wa.me/573001234567" target="_blank" rel="noopener">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            Chatea con Nosotros
+                        </a>
+                    </div>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            ¿Los bolsos son de cuero genuino o sintético?
+                            <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+                        </button>
+                        <div class="faq-answer"><p>Ofrecemos ambas opciones. Tenemos bolsos de cuero 100% genuino (vacuno) y bolsos de cuero sintético premium (similar al original). Ambos materiales son de alta calidad y durabilidad. En cada producto especificamos claramente el tipo de material en la descripción.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            ¿Cómo funciona el pago contra entrega?
+                            <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+                        </button>
+                        <div class="faq-answer"><p>Es muy sencillo: realizas tu pedido, nosotros lo enviamos a tu dirección. Cuando llega el domiciliario con tu bolso, le pagas directamente en efectivo o con datáfono (tarjeta). No necesitas hacer ningún anticipo. Disponible en las principales ciudades de Colombia.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            ¿Cuánto tarda el envío?
+                            <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+                        </button>
+                        <div class="faq-answer"><p>Para Bogotá: 1-2 días hábiles. Ciudades principales (Medellín, Cali, Barranquilla, Bucaramanga): 2-3 días hábiles. Otras ciudades: 3-5 días hábiles. Recibirás un número de seguimiento por WhatsApp para rastrear tu pedido en todo momento.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            ¿Cuál es la política de devoluciones?
+                            <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+                        </button>
+                        <div class="faq-answer"><p>Tienes 15 días calendario para devolver tu producto si no te gustó o no quedó como esperabas. El bolso debe estar sin uso, con sus etiquetas y empaque original. Contactamos al domiciliario para recogerlo sin costo adicional y te devolvemos el 100% de tu dinero.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            ¿Los bolsos tienen garantía?
+                            <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+                        </button>
+                        <div class="faq-answer"><p>Sí, todos nuestros bolsos tienen 6 meses de garantía contra defectos de fabricación (costuras, cremalleras, herrajes). La garantía no cubre daños por uso indebido, humedad excesiva o desgaste natural. Si tu bolso presenta algún defecto dentro del período de garantía, lo reparamos o cambiamos sin costo.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            ¿Puedo pagar a cuotas?
+                            <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+                        </button>
+                        <div class="faq-answer"><p>Sí, puedes pagar hasta 12 cuotas sin interés con tu tarjeta de crédito a través de Mercado Pago o Wompi. También tenemos la opción de splitting con Addi y davipla. El proceso es 100% seguro y se hace directamente con las plataformas financieras.</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h2>👜 Únete al Club Bagou</h2>
+                    <p>Sé la primera en conocer nuevas colecciones, ofertas exclusivas y consejos de estilo.</p>
+                </div>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit" class="btn">Suscribirme</button>
+                </form>
+            </div>
+            <div class="newsletter-perks">
+                <span>✦ 10% OFF en tu primera compra</span>
+                <span>✦ Acceso anticipado a ofertas</span>
+                <span>✦ Sin spam, solo lo bueno</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="nosotros">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <div class="logo-icon">👜</div>
+                        <span class="logo-text">Bago<span>u</span></span>
+                    </a>
+                    <p>Bolsos y accesorios con diseño colombiano. Cuero genuino y sintético premium, elaborados con dedicación para mujeres que valoran el estilo y la calidad.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="TikTok">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V8.73a8.19 8.19 0 004.76 1.52v-3.4a4.85 4.85 0 01-1-.16z"/></svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#2C1810"></polygon></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Tienda</h4>
+                    <ul class="footer-links">
+                        <li><a href="#productos">Carteras</a></li>
+                        <li><a href="#productos">Mochilas</a></li>
+                        <li><a href="#productos">Bandoleras</a></li>
+                        <li><a href="#productos">Tote Bags</a></li>
+                        <li><a href="#ofertas">Ofertas</a></li>
+                        <li><a href="#productos">Nuevos Ingresos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Información</h4>
+                    <ul class="footer-links">
+                        <li><a href="#nosotros">Sobre Nosotros</a></li>
+                        <li><a href="#faq">Preguntas Frecuentes</a></li>
+                        <li><a href="#">Envíos y Entregas</a></li>
+                        <li><a href="#">Política de Devoluciones</a></li>
+                        <li><a href="#">Garantía</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://wa.me/573001234567" target="_blank">WhatsApp</a></li>
+                        <li><a href="mailto:hola@bagou.co">hola@bagou.co</a></li>
+                        <li><a href="#">Bogotá, Colombia</a></li>
+                        <li><a href="#">Lun-Sáb: 9am-7pm</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Términos y Condiciones</a></li>
+                        <li><a href="#">Política de Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Bagou Colombia. Todos los derechos reservados. Hecho con ❤️ en Colombia.</p>
+                <div class="footer-payments">
+                    <div class="payment-icon">VISA</div>
+                    <div class="payment-icon">MC</div>
+                    <div class="payment-icon">AMEX</div>
+                    <div class="payment-icon">PSE</div>
+                    <div class="payment-icon">Nequi</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Cart Panel -->
+    <div class="cart-panel" id="cartPanel">
+        <div class="cart-header">
+            <h2>Tu Carrito <span class="cart-count" id="cartCount">0</span></h2>
+            <button class="cart-close" id="cartClose">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-subtotal">
+                <span>Subtotal:</span>
+                <strong id="cartTotal">$0 COP</strong>
+            </div>
+            <p class="cart-shipping-note">Envío calculado al finalizar compra</p>
+            <button class="btn btn-primary" id="checkoutBtn">Finalizar Pedido</button>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script>
+        // ============ PRODUCT DATA ============
+        const products = [
+            {
+                id: 'cartera-artisan-cognac',
+                name: 'Cartera Artisan Cuero Cognac',
+                brand: 'Bagou Artisan',
+                price: 249900,
+                oldPrice: 329900,
+                image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500&h=500&fit=crop&q=80',
+                features: ['Cuero genuino', 'Forro repelente', '6 compartimentos'],
+                category: 'carteras',
+                badge: 'ofertas',
+                badgeLabel: '-24%',
+                badgeClass: 'badge-sale'
+            },
+            {
+                id: 'tote-canvas-lino',
+                name: 'Tote Bag Lino y Cuero',
+                brand: 'Bagou Basic',
+                price: 189900,
+                oldPrice: null,
+                image: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=500&h=500&fit=crop&q=80',
+                features: ['Lino premium', 'Asas de cuero', 'Gran capacidad'],
+                category: 'totebags',
+                badge: 'nuevo',
+                badgeLabel: 'Nuevo',
+                badgeClass: 'badge-new'
+            },
+            {
+                id: 'mochila-urbana-noir',
+                name: 'Mochila Urbana Noir Premium',
+                brand: 'Bagou Urban',
+                price: 199900,
+                oldPrice: 259900,
+                image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop&q=80',
+                features: ['Cuero sintético', 'Porta laptop 15"', 'USB charging'],
+                category: 'mochilas',
+                badge: 'ofertas',
+                badgeLabel: '-23%',
+                badgeClass: 'badge-sale'
+            },
+            {
+                id: 'bandolera-mini-leopard',
+                name: 'Bandolera Mini Leopard Print',
+                brand: 'Bagou Trend',
+                price: 149900,
+                oldPrice: null,
+                image: 'https://images.unsplash.com/photo-1591561954557-26941169b49e?w=500&h=500&fit=crop&q=80',
+                features: ['Estampado leopard', 'Cadena dorada', 'Bolsillo interno'],
+                category: 'bandoleras',
+                badge: 'hot',
+                badgeLabel: 'Hot',
+                badgeClass: 'badge-hot'
+            },
+            {
+                id: 'clutch-fiesta-nude',
+                name: 'Clutch Nude para Fiesta',
+                brand: 'Bagou Glam',
+                price: 89900,
+                oldPrice: 129900,
+                image: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=500&h=500&fit=crop&q=80',
+                features: ['Charol nude', 'Clutch de mano', 'Ideal para fiestas'],
+                category: 'carteras',
+                badge: 'ofertas',
+                badgeLabel: '-31%',
+                badgeClass: 'badge-sale'
+            },
+            {
+                id: 'mochila-viajera-miel',
+                name: 'Mochila Viajera Miel Cuero',
+                brand: 'Bagou Artisan',
+                price: 329900,
+                oldPrice: null,
+                image: 'https://images.unsplash.com/photo-1581605405669-fcdf81165afa?w=500&h=500&fit=crop&q=80',
+                features: ['Cuero genuino', '40L capacidad', 'Antirrobo'],
+                category: 'mochilas',
+                badge: 'nuevo',
+                badgeLabel: 'Nuevo',
+                badgeClass: 'badge-new'
+            },
+            {
+                id: 'bolso-viaje-duffel',
+                name: 'Bolso Duffel Weekend Negro',
+                brand: 'Bagou Travel',
+                price: 219900,
+                oldPrice: 279900,
+                image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop&q=80',
+                features: ['Cuero sintético', '55cm diámetro', 'Bolsillo zapato'],
+                category: 'totebags',
+                badge: 'ofertas',
+                badgeLabel: '-21%',
+                badgeClass: 'badge-sale'
+            },
+            {
+                id: 'bandolera-cruzada-minimal',
+                name: 'Bandolera Cruzada Minimal Negro',
+                brand: 'Bagou Urban',
+                price: 119900,
+                oldPrice: null,
+                image: 'https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=500&h=500&fit=crop&q=80',
+                features: ['Diseño minimal', 'Ajustable', 'Bolsillo frontal'],
+                category: 'bandoleras',
+                badge: null,
+                badgeLabel: null,
+                badgeClass: null
+            }
+        ];
+
+        // ============ CART STATE ============
+        let cart = JSON.parse(localStorage.getItem('bagou_cart')) || [];
+
+        // ============ DOM REFS ============
+        const header = document.getElementById('header');
+        const cartBtn = document.getElementById('cartBtn');
+        const cartBadge = document.getElementById('cartBadge');
+        const cartPanel = document.getElementById('cartPanel');
+        const cartOverlay = document.getElementById('cartOverlay');
+        const cartClose = document.getElementById('cartClose');
+        const cartItemsEl = document.getElementById('cartItems');
+        const cartTotal = document.getElementById('cartTotal');
+        const cartCount = document.getElementById('cartCount');
+        const productsGrid = document.getElementById('productsGrid');
+        const filterTabs = document.getElementById('filterTabs');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const toastContainer = document.getElementById('toastContainer');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+        const newsletterForm = document.getElementById('newsletterForm');
+
+        // ============ UTILITIES ============
+        function formatPrice(price) {
+            return '$' + price.toLocaleString('es-CO') + ' COP';
+        }
+
+        function getDiscount(oldPrice, newPrice) {
+            return oldPrice ? Math.round((1 - newPrice / oldPrice) * 100) + '% OFF' : '';
+        }
+
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.innerHTML = '<div class="toast-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span class="toast-message">' + message + '</span>';
+            toastContainer.appendChild(toast);
+            setTimeout(() => { toast.classList.add('hide'); setTimeout(() => toast.remove(), 300); }, 3200);
+        }
+
+        // ============ CART FUNCTIONS ============
+        function updateCartBadge() {
+            const total = cart.reduce((s, i) => s + i.quantity, 0);
+            cartBadge.textContent = total;
+            cartCount.textContent = total;
+            total > 0 ? cartBadge.classList.add('show') : cartBadge.classList.remove('show');
+        }
+
+        function saveCart() {
+            localStorage.setItem('bagou_cart', JSON.stringify(cart));
+        }
+
+        function addToCart(productId) {
+            const existing = cart.find(i => i.productId === productId);
+            if (existing) { existing.quantity++; } else { cart.push({ productId, quantity: 1 }); }
+            saveCart();
+            updateCartBadge();
+            renderCartItems();
+            showToast('¡Producto agregado al carrito!');
+        }
+
+        function updateQuantity(productId, delta) {
+            const item = cart.find(i => i.productId === productId);
+            if (item) {
+                item.quantity += delta;
+                if (item.quantity <= 0) cart = cart.filter(i => i.productId !== productId);
+                saveCart();
+                updateCartBadge();
+                renderCartItems();
+            }
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(i => i.productId !== productId);
+            saveCart();
+            updateCartBadge();
+            renderCartItems();
+        }
+
+        function toggleCart(show) {
+            if (show) {
+                cartPanel.classList.add('show');
+                cartOverlay.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            } else {
+                cartPanel.classList.remove('show');
+                cartOverlay.classList.remove('show');
+                document.body.style.overflow = '';
+            }
+        }
+
+        function renderCartItems() {
+            if (cart.length === 0) {
+                cartItemsEl.innerHTML = '<div class="cart-empty"><div class="cart-empty-icon">🛍️</div><h3>Tu carrito está vacío</h3><p>¡Explora nuestra colección y encuentra tu bolso ideal!</p></div>';
+                checkoutBtn.disabled = true;
+            } else {
+                let html = '';
+                cart.forEach(item => {
+                    const p = products.find(pr => pr.id === item.productId);
+                    if (p) {
+                        html += '<div class="cart-item">' +
+                            '<div class="cart-item-image"><img src="' + p.image + '" alt="' + p.name + '"></div>' +
+                            '<div class="cart-item-info">' +
+                            '<div class="cart-item-top">' +
+                            '<div class="cart-item-name">' + p.name + '</div>' +
+                            '<div class="cart-item-price">' + formatPrice(p.price) + '</div></div>' +
+                            '<div class="cart-item-bottom">' +
+                            '<div class="qty-controls">' +
+                            '<button class="qty-btn" onclick="updateQuantity(\'' + p.id + '\', -1)">−</button>' +
+                            '<span class="cart-item-qty">' + item.quantity + '</span>' +
+                            '<button class="qty-btn" onclick="updateQuantity(\'' + p.id + '\', 1)">+</button></div>' +
+                            '<button class="cart-item-remove" onclick="removeFromCart(\'' + p.id + '\')">Eliminar</button></div></div></div>';
+                    }
+                });
+                cartItemsEl.innerHTML = html;
+                checkoutBtn.disabled = false;
+            }
+            const total = cart.reduce((s, item) => {
+                const p = products.find(pr => pr.id === item.productId);
+                return s + (p ? p.price * item.quantity : 0);
+            }, 0);
+            cartTotal.textContent = formatPrice(total);
+        }
+
+        // ============ PRODUCT RENDERING ============
+        function renderProducts(filter = 'all') {
+            let filtered = filter === 'all' ? products :
+                filter === 'ofertas' ? products.filter(p => p.badge === 'ofertas') :
+                products.filter(p => p.category === filter);
+
+            if (filtered.length === 0) {
+                productsGrid.innerHTML = '<p style="text-align:center;grid-column:1/-1;color:var(--text-secondary);padding:60px 0;font-size:1rem;">No hay productos en esta categoría. ¡Pronto agregamos más!</p>';
+                return;
+            }
+
+            let html = '';
+            filtered.forEach(p => {
+                const discount = p.oldPrice ? getDiscount(p.oldPrice, p.price) : '';
+                const badgeHTML = p.badge ? '<div class="product-badges"><span class="badge ' + p.badgeClass + '">' + p.badgeLabel + '</span></div>' : '';
+                const oldPriceHTML = p.oldPrice ? '<span class="price-old">' + formatPrice(p.oldPrice) + '</span>' : '';
+                const featuresHTML = p.features.map(f => '<span class="feature-tag">' + f + '</span>').join('');
+                
+                html += '<div class="product-card" data-category="' + p.category + '">' +
+                    '<div class="product-image">' + badgeHTML +
+                    '<img src="' + p.image + '" alt="' + p.name + '">' +
+                    '<div class="product-quick-actions">' +
+                    '<button class="quick-action-btn" onclick="addToCart(\'' + p.id + '\')" title="Agregar al carrito"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg></button>' +
+                    '<button class="quick-action-btn" title="Ver favorito"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L1221.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button></div></div>' +
+                    '<div class="product-info">' +
+                    '<div class="product-category">' + p.category + '</div>' +
+                    '<h3 class="product-name">' + p.name + '</h3>' +
+                    '<div class="product-features">' + featuresHTML + '</div>' +
+                    '<div class="product-price-row">' +
+                    '<div class="product-price">' +
+                    '<span class="price-current">' + formatPrice(p.price) + '</span>' + oldPriceHTML + '</div>' +
+                    '<div class="product-actions">' +
+                    '<button class="btn btn-primary btn-sm" onclick="addToCart(\'' + p.id + '\')">Agregar</button></div></div></div></div>';
+            });
+            productsGrid.innerHTML = html;
+        }
+
+        function filterProducts(category) {
+            document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+            const targetTab = document.querySelector('.filter-tab[data-filter="' + category + '"]');
+            if (targetTab) targetTab.classList.add('active');
+            renderProducts(category);
+            document.getElementById('productos').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // ============ FAQ ACCORDION ============
+        function initFAQ() {
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.querySelector('.faq-question').addEventListener('click', () => {
+                    const isOpen = item.classList.contains('open');
+                    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                    if (!isOpen) item.classList.add('open');
+                });
+            });
+        }
+
+        // ============ EVENT LISTENERS ============
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        cartBtn.addEventListener('click', () => toggleCart(true));
+        cartClose.addEventListener('click', () => toggleCart(false));
+        cartOverlay.addEventListener('click', () => toggleCart(false));
+
+        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.add('show'));
+        mobileMenuClose.addEventListener('click', () => mobileMenu.classList.remove('show'));
+        mobileMenu.querySelectorAll('.nav-link, .btn').forEach(l => l.addEventListener('click', () => mobileMenu.classList.remove('show')));
+
+        filterTabs.addEventListener('click', e => {
+            const tab = e.target.closest('.filter-tab');
+            if (!tab) return;
+            filterTabs.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            renderProducts(tab.dataset.filter);
+        });
+
+        checkoutBtn.addEventListener('click', () => {
+            const total = cart.reduce((s, item) => {
+                const p = products.find(pr => pr.id === item.productId);
+                return s + (p ? p.price * item.quantity : 0);
+            }, 0);
+            showToast('¡Pedido recibido! Te contactamos por WhatsApp para confirmar.');
+            cart = [];
+            saveCart();
+            updateCartBadge();
+            renderCartItems();
+            toggleCart(false);
+            setTimeout(() => {
+                window.open('https://wa.me/573001234567?text=' + encodeURIComponent('¡Hola! Quiero hacer un pedido en Bagou. Mi carrito tiene ' + cart.length + ' productos por un total de ' + formatPrice(total)), '_blank');
+            }, 1000);
+        });
+
+        newsletterForm.addEventListener('submit', e => {
+            e.preventDefault();
+            showToast('¡Bienvenida al Club Bagou! Revisa tu correo para tu 10% de descuento.');
+            newsletterForm.reset();
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const target = document.querySelector(a.getAttribute('href'));
+                if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+            });
+        });
+
+        // ============ INIT ============
+        renderProducts();
+        renderCartItems();
+        updateCartBadge();
+        initFAQ();
+    </script>
+</body>
+</html>

@@ -1,0 +1,1953 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filare | Arte en Crochet — Bolsos Artesanales Hechos a Mano en Cuenca, Ecuador</title>
+    <meta name="description" content="Bolsos de crochet 100% artesanales hechos a mano en Cuenca, Ecuador. Diseños únicos, tejidos con alma, amor y propósito. Envío a todo Ecuador y Latinoamérica.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --green: #4A7C59;
+            --green-dark: #3A6247;
+            --green-light: #6B9E78;
+            --cream: #FAF7F2;
+            --cream-dark: #F0EBE3;
+            --warm-white: #FFFDF9;
+            --brown: #5C3D2E;
+            --brown-light: #8B6F5C;
+            --text: #2C2416;
+            --text-secondary: #6B5D4D;
+            --text-muted: #9A8B7A;
+            --border: #E8E0D5;
+            --shadow-sm: 0 1px 3px rgba(44, 36, 22, 0.06);
+            --shadow-md: 0 4px 16px rgba(44, 36, 22, 0.08);
+            --shadow-lg: 0 12px 40px rgba(44, 36, 22, 0.12);
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-xl: 32px;
+            --radius-full: 9999px;
+            --transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-spring: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', system-ui, sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+
+        /* ============ HEADER ============ */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: all 0.4s ease;
+            background: transparent;
+        }
+
+        .header.scrolled {
+            background: rgba(250, 247, 242, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: var(--shadow-sm);
+            padding: 14px 0;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 32px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text);
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            background: var(--green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 2px 8px rgba(74, 124, 89, 0.3);
+        }
+
+        .logo-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        .logo-sub {
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--green);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            display: block;
+            margin-top: -2px;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color var(--transition);
+            position: relative;
+        }
+
+        .nav-link:hover { color: var(--green); }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .social-icon-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1.5px solid var(--border);
+            background: transparent;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            transition: all var(--transition);
+            text-decoration: none;
+        }
+
+        .social-icon-btn:hover {
+            background: var(--green);
+            border-color: var(--green);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 11px 26px;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all var(--transition);
+            border: none;
+            font-family: inherit;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: var(--green);
+            color: white;
+            box-shadow: 0 2px 12px rgba(74, 124, 89, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--green-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(74, 124, 89, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--green);
+            border: 2px solid var(--green);
+        }
+
+        .btn-outline:hover {
+            background: var(--green);
+            color: white;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--green);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-sm { padding: 8px 18px; font-size: 0.8rem; }
+        .btn-lg { padding: 14px 36px; font-size: 1rem; }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            color: var(--text);
+        }
+
+        /* ============ HERO ============ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(160deg, var(--cream) 0%, var(--cream-dark) 50%, #EDE5D8 100%);
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .hero-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.2;
+        }
+
+        .hero-blob-1 {
+            width: 500px;
+            height: 500px;
+            background: var(--green);
+            top: -150px;
+            right: -100px;
+            animation: floatBlob 18s ease-in-out infinite;
+        }
+
+        .hero-blob-2 {
+            width: 350px;
+            height: 350px;
+            background: #C4A882;
+            bottom: -100px;
+            left: -80px;
+            animation: floatBlob 14s ease-in-out infinite reverse;
+        }
+
+        @keyframes floatBlob {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(20px, -30px) scale(1.05); }
+            66% { transform: translate(-15px, 15px) scale(0.97); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 0.9fr;
+            gap: 80px;
+            align-items: center;
+            padding: 120px 0 80px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(74, 124, 89, 0.1);
+            color: var(--green);
+            padding: 8px 18px;
+            border-radius: var(--radius-full);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 24px;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(2.5rem, 5.5vw, 4rem);
+            color: var(--text);
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            font-style: italic;
+            color: var(--green);
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            max-width: 460px;
+            margin-bottom: 36px;
+            line-height: 1.85;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image-frame {
+            position: relative;
+            width: 100%;
+            max-width: 440px;
+        }
+
+        .hero-image-main {
+            width: 100%;
+            aspect-ratio: 4/5;
+            object-fit: cover;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero-float-card {
+            position: absolute;
+            background: white;
+            border-radius: var(--radius-md);
+            padding: 16px 20px;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .hero-float-card-1 {
+            bottom: -20px;
+            left: -30px;
+            animation: float 5s ease-in-out infinite;
+        }
+
+        .hero-float-card-2 {
+            top: 30px;
+            right: -20px;
+            animation: float 6s ease-in-out infinite 1.5s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .float-card-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(74, 124, 89, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .float-card-text {
+            font-size: 0.82rem;
+        }
+
+        .float-card-text strong {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--text);
+        }
+
+        .float-card-text span {
+            color: var(--text-muted);
+        }
+
+        .hero-trust {
+            display: flex;
+            gap: 40px;
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+        }
+
+        .trust-item {}
+
+        .trust-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--green);
+        }
+
+        .trust-label {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        /* ============ MARQUEE ============ */
+        .marquee {
+            background: var(--green);
+            padding: 14px 0;
+            overflow: hidden;
+        }
+
+        .marquee-track {
+            display: flex;
+            gap: 48px;
+            animation: marquee 25s linear infinite;
+            white-space: nowrap;
+        }
+
+        .marquee-track span {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.85);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-shrink: 0;
+        }
+
+        .marquee-track span::before {
+            content: '♡';
+            font-size: 0.6rem;
+            opacity: 0.5;
+        }
+
+        @keyframes marquee {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        /* ============ ABOUT / STORY ============ */
+        .story {
+            padding: 100px 0;
+            background: var(--warm-white);
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .story-images {
+            position: relative;
+        }
+
+        .story-img-main {
+            width: 100%;
+            aspect-ratio: 4/5;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .story-img-secondary {
+            position: absolute;
+            width: 55%;
+            bottom: -30px;
+            right: -30px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-xl);
+            border: 5px solid white;
+        }
+
+        .story-badge {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            background: var(--green);
+            color: white;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-md);
+        }
+
+        .story-badge-year {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .story-badge-label {
+            font-size: 0.55rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.85;
+        }
+
+        .story-text .section-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--green);
+            margin-bottom: 14px;
+        }
+
+        .story-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+
+        .story-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--green);
+            border-left: 3px solid var(--green);
+            padding-left: 20px;
+            margin: 24px 0;
+            line-height: 1.6;
+        }
+
+        .story-text p {
+            color: var(--text-secondary);
+            font-size: 0.975rem;
+            margin-bottom: 16px;
+        }
+
+        .story-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin: 28px 0;
+        }
+
+        .story-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .story-feature-icon {
+            width: 32px;
+            height: 32px;
+            background: rgba(74, 124, 89, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        /* ============ PRODUCTS ============ */
+        .products {
+            padding: 100px 0;
+            background: var(--cream);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--green);
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            color: var(--text);
+            margin-bottom: 14px;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        .product-card:nth-child(1) { animation-delay: 0ms; }
+        .product-card:nth-child(2) { animation-delay: 80ms; }
+        .product-card:nth-child(3) { animation-delay: 160ms; }
+        .product-card:nth-child(4) { animation-delay: 240ms; }
+        .product-card:nth-child(5) { animation-delay: 320ms; }
+        .product-card:nth-child(6) { animation-delay: 400ms; }
+
+        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .product-image {
+            position: relative;
+            aspect-ratio: 1;
+            background: linear-gradient(145deg, var(--cream-dark), var(--cream));
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-tag {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: var(--green);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: var(--radius-full);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .product-info {
+            padding: 22px;
+        }
+
+        .product-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+
+        .product-desc {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-bottom: 14px;
+            line-height: 1.5;
+        }
+
+        .product-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .product-price {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--green);
+        }
+
+        .product-price span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 400;
+            margin-left: 4px;
+        }
+
+        .product-btn {
+            padding: 8px 18px;
+            font-size: 0.8rem;
+        }
+
+        /* ============ PROCESS ============ */
+        .process {
+            padding: 100px 0;
+            background: var(--warm-white);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            position: relative;
+        }
+
+        .process-grid::before {
+            content: '';
+            position: absolute;
+            top: 45px;
+            left: 12%;
+            right: 12%;
+            height: 2px;
+            background: linear-gradient(to right, var(--green), var(--green-light));
+            opacity: 0.3;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .process-icon {
+            width: 90px;
+            height: 90px;
+            background: white;
+            border-radius: 50%;
+            display flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: var(--shadow-md);
+            font-size: 2rem;
+            position: relative;
+            z-index: 1;
+            border: 3px solid var(--cream-dark);
+        }
+
+        .process-step h3 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .process-step p {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* ============ TESTIMONIALS ============ */
+        .testimonials {
+            padding: 100px 0;
+            background: var(--cream);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            transition: all var(--transition);
+        }
+
+        .testimonial-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+
+        .testimonial-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.05rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .testimonial-quote::before {
+            content: '"';
+            font-size: 3rem;
+            color: var(--green);
+            opacity: 0.4;
+            line-height: 0;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--green), var(--green-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .author-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text);
+        }
+
+        .author-location {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        /* ============ CTA ============ */
+        .cta {
+            padding: 100px 0;
+            background: var(--green);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-content .section-label {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .cta-content .section-title {
+            color: white;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 16px;
+        }
+
+        .cta-content p {
+            font-size: 1.05rem;
+            opacity: 0.85;
+            margin-bottom: 36px;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-buttons .btn-white {
+            background: white;
+            color: var(--green);
+        }
+
+        .cta-buttons .btn-outline-white {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+
+        .cta-buttons .btn-outline-white:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: white;
+        }
+
+        .cta-social {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 32px;
+        }
+
+        .cta-social a {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all var(--transition);
+        }
+
+        .cta-social a:hover {
+            background: white;
+            color: var(--green);
+            transform: translateY(-3px);
+        }
+
+        /* ============ FAQ ============ */
+        .faq {
+            padding: 100px 0;
+            background: var(--warm-white);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .faq-intro h2 {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+
+        .faq-intro p {
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        .faq-whatsapp {
+            background: #25D366;
+            color: white;
+            border-radius: var(--radius-md);
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            transition: all var(--transition);
+        }
+
+        .faq-whatsapp:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
+        }
+
+        .faq-whatsapp-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .faq-whatsapp strong {
+            display: block;
+            font-size: 0.95rem;
+            margin-bottom: 2px;
+        }
+
+        .faq-whatsapp span {
+            font-size: 0.8rem;
+            opacity: 0.85;
+        }
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .faq-question {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 0;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text);
+            gap: 20px;
+            font-family: inherit;
+        }
+
+        .faq-question:hover { color: var(--green); }
+
+        .faq-toggle {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--cream-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            color: var(--green);
+        }
+
+        .faq-item.open .faq-toggle {
+            background: var(--green);
+            color: white;
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+        }
+
+        .faq-item.open .faq-answer { max-height: 300px; }
+
+        .faq-answer p {
+            padding-bottom: 20px;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            line-height: 1.75;
+        }
+
+        /* ============ INSTAGRAM ============ */
+        .instagram {
+            padding: 80px 0;
+            background: var(--cream);
+        }
+
+        .instagram-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .instagram-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text);
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+
+        .instagram-link:hover { color: var(--green); }
+
+        .instagram-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 6px;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+        }
+
+        .insta-item {
+            aspect-ratio: 1;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            background: var(--cream-dark);
+        }
+
+        .insta-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .insta-item:hover img { transform: scale(1.08); }
+
+        .insta-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(74, 124, 89, 0.75);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            color: white;
+        }
+
+        .insta-item:hover .insta-overlay { opacity: 1; }
+
+        /* ============ FOOTER ============ */
+        .footer {
+            background: var(--text);
+            color: rgba(255,255,255,0.7);
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand .logo {
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand .logo-text { color: white; }
+
+        .footer-brand p {
+            font-size: 0.875rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            opacity: 0.7;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 10px;
+        }
+
+        .footer-social a {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all var(--transition);
+        }
+
+        .footer-social a:hover {
+            background: var(--green);
+            transform: translateY(-3px);
+        }
+
+        .footer-col h4 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 18px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li { margin-bottom: 10px; }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.55);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: all var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--green
+            -light);
+        }
+
+        .footer-bottom {
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            opacity: 0.5;
+        }
+
+        /* ============ MOBILE MENU ============ */
+        .mobile-menu {
+            position: fixed;
+            inset: 0;
+            background: var(--text);
+            z-index: 1500;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 28px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu.show { opacity: 1; visibility: visible; }
+
+        .mobile-menu .nav-link {
+            font-size: 1.5rem;
+            color: white;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* ============ TOAST ============ */
+        .toast-container {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 3000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .toast {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--text);
+            color: white;
+            padding: 14px 20px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-xl);
+            animation: toastIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 260px;
+        }
+
+        .toast.hide { animation: toastOut 0.3s ease forwards; }
+
+        @keyframes toastIn {
+            from { opacity: 0; transform: translateX(60px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes toastOut { to { opacity: 0; transform: translateX(60px); } }
+
+        .toast-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .toast-message { font-size: 0.875rem; font-weight: 500; }
+
+        /* ============ WHATSAPP FLOAT ============ */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 1000;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            text-decoration: none;
+            transition: all var(--transition);
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 28px rgba(37, 211, 102, 0.5);
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+            50% { box-shadow: 0 4px 30px rgba(37, 211, 102, 0.6); }
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 1024px) {
+            .hero-content { grid-template-columns: 1fr; text-align: center; gap: 48px; }
+            .hero-text p { margin: 0 auto 36px; }
+            .hero-buttons { justify-content: center; }
+            .hero-trust { justify-content: center; }
+            .hero-image-wrapper { display: none; }
+            .story-grid { grid-template-columns: 1fr; gap: 48px; }
+            .products-grid { grid-template-columns: repeat(2, 1fr); }
+            .process-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+            .process-grid::before { display: none; }
+            .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+            .faq-grid { grid-template-columns: 1fr; gap: 48px; }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .nav { display: none; }
+            .header-actions .btn:not(.whatsapp-float) { display: none; }
+            .mobile-menu-btn { display: block; }
+            .hero { min-height: auto; padding: 120px 0 60px; }
+            .hero-stats { flex-direction: column; gap: 16px; }
+            .stat { text-align: center; }
+            .products-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+            .process-grid { grid-template-columns: 1fr 1fr; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+            .toast-container { left: 16px; right: 16px; }
+            .whatsapp-float { bottom: 20px; right: 20px; width: 54px; height: 54px; }
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 0 20px; }
+            .products-grid { grid-template-columns: 1fr; }
+            .process-grid { grid-template-columns: 1fr; }
+            .hero-buttons .btn { width: 100%; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+            .instagram-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="#" class="logo">
+                    <div class="logo-icon">🧶</div>
+                    <div>
+                        <span class="logo-text">Filare</span>
+                        <span class="logo-sub">Arte en Crochet</span>
+                    </div>
+                </a>
+                <nav class="nav">
+                    <a href="#inicio" class="nav-link">Inicio</a>
+                    <a href="#historia" class="nav-link">Nuestra Historia</a>
+                    <a href="#productos" class="nav-link">Bolsos</a>
+                    <a href="#proceso" class="nav-link">Cómo Trabajamos</a>
+                    <a href="#faq" class="nav-link">Ayuda</a>
+                </nav>
+                <div class="header-actions">
+                    <a href="https://www.instagram.com/filare.ec" target="_blank" class="social-icon-btn" title="Instagram" id="social-instagram">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@filare.ec" target="_blank" class="social-icon-btn" title="TikTok" id="social-tiktok" style="display:none;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V8.73a8.19 8.19 0 004.76 1.52v-3.4a4.85 4.85 0 01-1-.16z"/></svg>
+                    </a>
+                    <a href="https://www.facebook.com/filare.ec" target="_blank" class="social-icon-btn" title="Facebook" id="social-facebook" style="display:none;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                    <a href="https://wa.me/8613122591640" target="_blank" class="btn btn-primary btn-sm">Escribir por WhatsApp</a>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menú">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileMenuClose">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <a href="#inicio" class="nav-link">Inicio</a>
+        <a href="#historia" class="nav-link">Nuestra Historia</a>
+        <a href="#productos" class="nav-link">Bolsos</a>
+        <a href="#proceso" class="nav-link">Cómo Trabajamos</a>
+        <a href="#faq" class="nav-link">Ayuda</a>
+        <a href="https://wa.me/8613122591640" target="_blank" class="btn btn-primary btn-lg">Escribir por WhatsApp</a>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero" id="inicio">
+        <div class="hero-bg">
+            <div class="hero-blob hero-blob-1"></div>
+            <div class="hero-blob hero-blob-2"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">✦ Artesanía Ecuatoriana</div>
+                    <h1>Bolsos de Crochet<br>Hechos con Alma</h1>
+                    <p class="hero-tagline">"Hecho con alma, amor y propósito 💚"</p>
+                    <p>Cada bolso es tejido completamente a mano en Cuenca, Ecuador. Diseños únicos que nacen de la creatividad y la tradición artesanal. No hay dos iguales.</p>
+                    <div class="hero-buttons">
+                        <a href="#productos" class="btn btn-primary btn-lg">Ver Colección</a>
+                        <a href="https://wa.me/8613122591640" target="_blank" class="btn btn-outline btn-lg">Hacer un Pedido</a>
+                    </div>
+                    <div class="hero-trust">
+                        <div class="trust-item">
+                            <div class="trust-value">100%</div>
+                            <div class="trust-label">Hecho a mano</div>
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-value">Cuenca</div>
+                            <div class="trust-label">Ecuador</div>
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-value">Único</div>
+                            <div class="trust-label">Cada pieza es diferente</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper">
+                    <div class="hero-image-frame">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=750&fit=crop&q=80" alt="Bolso de crochet artesanal" class="hero-image-main">
+                        <div class="hero-float-card hero-float-card-1">
+                            <div class="float-card-icon">🧶</div>
+                            <div class="float-card-text"><strong>100% Artesanal</strong><span>Tejido a mano con dedicación</span></div>
+                        </div>
+                        <div class="hero-float-card hero-float-card-2">
+                            <div class="float-card-icon">💚</div>
+                            <div class="float-card-text"><strong>Hecho con amor</strong><span>Cada puntada cuenta una historia</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee">
+        <div class="marquee-track">
+            <span>Hecho con Alma, Amor y Propósito 💚</span>
+            <span>Tejemos Historias para que Tú las Uses ✨</span>
+            <span>Artesanía Cuencana desde Ecuador</span>
+            <span>Diseños Únicos y Originales</span>
+            <span>Hecho con Alma, Amor y Propósito 💚</span>
+            <span>Tejemos Historias para que Tú las Uses ✨</span>
+            <span>Artesanía Cuencana desde Ecuador</span>
+            <span>Diseños Únicos y Originales</span>
+        </div>
+    </div>
+
+    <!-- Story -->
+    <section class="story" id="historia">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-images">
+                    <img src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=600&h=750&fit=crop&q=80" alt="Artesana tejiendo crochet" class="story-img-main">
+                    <img src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=350&h=280&fit=crop&q=80" alt="Hilo de crochet" class="story-img-secondary">
+                    <div class="story-badge">
+                        <div class="story-badge-year">2025</div>
+                        <div class="story-badge-label">Ecuador</div>
+                    </div>
+                </div>
+                <div class="story-text">
+                    <span class="section-label">Nuestra Historia</span>
+                    <h2>Nacimos para Tejer Historias que Se Usan</h2>
+                    <blockquote class="story-quote">
+                        "Amamos tejer historias... y que tú las uses"
+                    </blockquote>
+                    <p>Filare es un emprendimiento artesanal de Cuenca, Ecuador, donde cada bolso de crochet cuenta una historia. Somos una marca que valora la paciencia, la dedicación y el arte del tejido a mano.</p>
+                    <p>Cada pieza es creada con técnica, creatividad y mucho cariño, combinando colores, texturas y diseños que reflejan la calidez de lo hecho en casa.</p>
+                    <div class="story-features">
+                        <div class="story-feature">
+                            <div class="story-feature-icon">🧶</div>
+                            <span>Hilo premium</span>
+                        </div>
+                        <div class="story-feature">
+                            <div class="story-feature-icon">✂️</div>
+                            <span>100% artesanal</span>
+                        </div>
+                        <div class="story-feature">
+                            <div class="story-feature-icon">💚</div>
+                            <span>Hecho con amor</span>
+                        </div>
+                        <div class="story-feature">
+                            <div class="story-feature-icon">🌿</div>
+                            <span>Materiales naturales</span>
+                        </div>
+                    </div>
+                    <a href="https://www.instagram.com/filare.ec" target="_blank" class="btn btn-primary">Síguenos en Instagram</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products" id="productos">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Colección</span>
+                <h2 class="section-title">Nuestros Bolsos de Crochet</h2>
+                <p class="section-subtitle">Cada uno es único, tejido especialmente para ti. Precios en USD.</p>
+            </div>
+            <div class="products-grid" id="productsGrid"></div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process" id="proceso">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Cómo Trabajamos</span>
+                <h2 class="section-title">De la Idea a Tu Bolsillo</h2>
+            </div>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="process-icon">💬</div>
+                    <h3>Escríbenos</h3>
+                    <p>Contactanos por WhatsApp o Instagram con el diseño que te gustó o tu idea personalizada.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-icon">🎨</div>
+                    <h3>Creamos</h3>
+                    <p>Tejemos tu bolso a mano con los colores y detalles que elijas. Solo para ti.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-icon">📦</div>
+                    <h3>Enviamos</h3>
+                    <p>Empacamos con cariño y lo enviamos a cualquier ciudad de Ecuador o Latinoamérica.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-icon">✨</div>
+                    <h3>Lo Disfrutas</h3>
+                    <p>Recibe tu pieza única y úsala con orgullo. Cada bolso cuenta tu historia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Testimonios</span>
+                <h2 class="section-title">Lo Que Dicen Nuestras Clientas</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">El bolso que me tejieron es hermoso, aún más bonito que en las fotos. La calidad del crochet es increíble y se nota que está hecho con mucho cariño. Ya es mi bolso favorito.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MC</div>
+                        <div>
+                            <div class="author-name">María C.</div>
+                            <div class="author-location">Quito, Ecuador</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">Le pedí un bolso personalizado para mi mamá y superó todas las expectativas. El empaque llegó súper bonito y ella quedó encantada. Definitivamente volveré a comprar.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AP</div>
+                        <div>
+                            <div class="author-name">Ana P.</div>
+                            <div class="author-location">Guayaquil, Ecuador</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">Encargué un bolso tipo tote grande y llegó perfecto. La comunicación fue muy fluida por WhatsApp y el envío llegó rapidísimo a Cuenca. 100% recomendado.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">LR</div>
+                        <div>
+                            <div class="author-name">Laura R.</div>
+                            <div class="author-location">Cuenca, Ecuador</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <span class="section-label">¡Haz Tu Pedido!</span>
+                <h2 class="section-title">Tu Bolsillo Ideal<br>Está a un Mensaje</h2>
+                <p>Escríbenos por WhatsApp con el diseño que te gustó o cuéntanos tu idea. Aceptamos pedidos personalizados en colores, tamaños y estilos. Cada bolso es tejido especialmente para ti.</p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/8613122591640" target="_blank" class="btn btn-white btn-lg">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        WhatsApp
+                    </a>
+                    <a href="https://www.instagram.com/filare.ec" target="_blank" class="btn btn-outline-white btn-lg">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        Instagram
+                    </a>
+                </div>
+                <div class="cta-social">
+                    <a href="https://www.instagram.com/filare.ec" target="_blank" title="Instagram" id="footer-instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@filare.ec" target="_blank" title="TikTok" id="footer-tiktok" style="display:none;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V8.73a8.19 8.19 0 004.76 1.52v-3.4a4.85 4.85 0 01-1-.16z"/></svg>
+                    </a>
+                    <a href="https://www.facebook.com/filare.ec" target="_blank" title="Facebook" id="footer-facebook" style="display:none;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="faq-grid">
+                <div class="faq-intro">
+                    <span class="section-label">Preguntas Frecuentes</span>
+                    <h2>¿Tienes Dudas?</h2>
+                    <p>Aquí respondemos las preguntas más comunes. Si no encuentras tu respuesta, escríbenos directamente.</p>
+                    <a href="https://wa.me/8613122591640" target="_blank" class="faq-whatsapp">
+                        <div class="faq-whatsapp-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        </div>
+                        <div>
+                            <strong>¿No encontraste tu respuesta?</strong>
+                            <span>Escríbenos por WhatsApp y te respondemos al instante</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="faq-list" id="faqList"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram -->
+    <section class="instagram">
+        <div class="container">
+            <div class="instagram-header">
+                <a href="https://www.instagram.com/filare.ec" target="_blank" class="instagram-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    @filare.ec
+                </a>
+                <p style="color: var(--text-muted); margin-top: 8px;">Síguenos para ver nuevos diseños y pedidos personalizados</p>
+            </div>
+        </div>
+        <div class="instagram-grid" id="instagramGrid">
+            <div class="insta-item">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop&q=80" alt="Bolsos crochet Filare">
+                <div class="insta-overlay">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                </div>
+            </div>
+            <div class="insta-item">
+                <img src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=400&h=400&fit=crop&q=80" alt="Hilo crochet artesanal">
+                <div class="insta-overlay">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                </div>
+            </div>
+            <div class="insta-item">
+                <img src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=400&h=400&fit=crop&q=80" alt="Tejido crochet">
+                <div class="insta-overlay">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.88C6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                </div>
+            </div>
+            <div class="insta-item">
+                <img src="https://images.unsplash.com/photo-1609710228159-0fa9bd7c0827?w=400&h=400&fit=crop&q=80" alt="Bolsos artesanales">
+                <div class="insta-overlay">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <div class="logo-icon">🧶</div>
+                        <span class="logo-text">Filare</span>
+                    </a>
+                    <p>Artesanía de crochet desde Cuenca, Ecuador. Cada bolso es único, tejido con alma, amor y propósito. Hecho a mano para personas que valoran lo auténtico.</p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/filare.ec" target="_blank" title="Instagram" id="footer-social-instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="https://www.tiktok.com/@filare.ec" target="_blank" title="TikTok" id="footer-social-tiktok" style="display:none;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V8.73a8.19 8.19 0 004.76 1.52v-3.4a4.85 4.85 0 01-1-.16z"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/filare.ec" target="_blank" title="Facebook" id="footer-social-facebook" style="display:none;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Tienda</h4>
+                    <ul class="footer-links">
+                        <li><a href="#productos">Bolsos de Crochet</a></li>
+                        <li><a href="#productos">Pedidos Personalizados</a></li>
+                        <li><a href="#proceso">Cómo Comprar</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Información</h4>
+                    <ul class="footer-links">
+                        <li><a href="#historia">Nuestra Historia</a></li>
+                        <li><a href="#faq">Preguntas Frecuentes</a></li>
+                        <li><a href="#faq">Envíos</a></li>
+                        <li><a href="#faq">Cambios y Devoluciones</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://wa.me/8613122591640" target="_blank">WhatsApp</a></li>
+                        <li><a href="https://www.instagram.com/filare.ec" target="_blank">Instagram</a></li>
+                        <li><a href="#">Cuenca, Ecuador</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Filare | Arte en Crochet — Cuenca, Ecuador</p>
+                <p>Hecho con alma, amor y propósito 💚</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/8613122591640" target="_blank" class="whatsapp-float" title="Escríbenos por WhatsApp">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <!-- Toast -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script>
+        // Product Data
+        const products = [
+            {
+                id: 'bolso-circular-crudo',
+                name: 'Bolso Circular Crudo',
+                desc: 'Diseño circular clásico en hilo de algodón natural. Asa larga para cruzar.',
+                price: 45,
+                image: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=500&h=500&fit=crop&q=80',
+                tag: 'Bestseller'
+            },
+            {
+                id: 'bolso-tote-natural',
+                name: 'Bolso Tote Natural',
+                desc: 'Tote espacioso ideal para el día a día. Asa corta reforzada.',
+                price: 50,
+                image: 'https://images.unsplash.com/photo-1591561954557-26941169b49e?w=500&h=500&fit=crop&q=80',
+                tag: 'Popular'
+            },
+            {
+                id: 'bandolera-mini-texture',
+                name: 'Bandolera Mini Texturada',
+                desc: 'Mini bandolera con patrón de textura único. Cadena dorada.',
+                price: 40,
+                image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop&q=80',
+                tag: 'Nuevo'
+            },
+            {
+                id: 'clutch-elegante',
+                name: 'Clutch Elegante Bordado',
+                desc: 'Clutch de mano con bordado artesanal. Perfecto para ocasiones especiales.',
+                price: 55,
+                image: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=500&h=500&fit=crop&q=80',
+                tag: 'Premium'
+            },
+            {
+                id: 'bolso-bucket-unico',
+                name: 'Bolso Bucket Único',
+                desc: 'Forma bucket con detalle de pompón. Cada uno es diferente.',
+                price: 48,
+                image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500&h=500&fit=crop&q=80',
+                tag: 'Artesanal'
+            },
+            {
+                id: 'mochila-mini-crochet',
+                name: 'Mochila Mini Crochet',
+                desc: 'Mini mochila con asa superior. Ideal para salidas casual.',
+                price: 52,
+                image: 'https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=500&h=500&fit=crop&q=80',
+                tag: 'Nuevo'
+            }
+        ];
+
+        // FAQ Data
+        const faqs = [
+            {
+                q: '¿Los bolsos son completamente hechos a mano?',
+                a: 'Sí, cada bolso es tejido completamente a mano en Cuenca, Ecuador. No usamos máquinas ni producción en serie. Por eso cada pieza es única.'
+            },
+            {
+                q: '¿Puedo pedir un diseño personalizado?',
+                a: '¡Por supuesto! Aceptamos pedidos personalizados. Puedes elegir colores, tamaño, tipo de asa y detalles. Solo escríbenos por WhatsApp con tu idea.'
+            },
+            {
+                q: '¿Cuáles son los tiempos de entrega?',
+                a: 'Dentro de Ecuador: 2-5 días hábiles según la ciudad. Para Latinoamérica: 7-15 días hábiles. El envío se hace con código de seguimiento.'
+            },
+            {
+                q: '¿Cómo funciona el pago?',
+                a: 'Aceptamos transferencia bancaria, pago con tarjeta a través de links de pago, y en algunos casos contra entrega en Cuenca. Pregúntanos las opciones.'
+            },
+            {
+                q: '¿Los bolsos se pueden lavar?',
+                a: 'Sí, la mayoría de nuestros bolsos se pueden lavar a mano con agua fría y jabón suave. No recomendamos lavadora. El hilo que usamos es resistente y de alta calidad.'
+            },
+            {
+                q: '¿Hacen envíos fuera de Ecuador?',
+                a: 'Sí, enviamos a toda Latinoamérica. Los costos de envío varían según el país. Contáctanos por WhatsApp para calcular el envío a tu ubicación.'
+            }
+        ];
+
+        // WhatsApp number
+        const WHATSAPP = '8613122591640';
+
+        // DOM refs
+        const header = document.getElementById('header');
+        const productsGrid = document.getElementById('productsGrid');
+        const faqList = document.getElementById('faqList');
+        const toastContainer = document.getElementById('toastContainer');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+
+        // Render products
+        function renderProducts() {
+            let html = '';
+            products.forEach(p => {
+                html += '<div class="product-card">' +
+                    '<div class="product-image">' +
+                    '<span class="product-tag">' + p.tag + '</span>' +
+                    '<img src="' + p.image + '" alt="' + p.name + '">' +
+                    '</div>' +
+                    '<div class="product-info">' +
+                    '<h3 class="product-name">' + p.name + '</h3>' +
+                    '<p class="product-desc">' + p.desc + '</p>' +
+                    '<div class="product-bottom">' +
+                    '<div class="product-price">$' + p.price + ' <span>USD</span></div>' +
+                    '<a href="https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent('¡Hola! Me interesa el bolso: ' + p.name + ' ($' + p.price + ' USD)') + '" target="_blank" class="btn btn-primary product-btn">Pedir</a>' +
+                    '</div></div></div>';
+            });
+            productsGrid.innerHTML = html;
+        }
+
+        // Render FAQs
+        function renderFAQs() {
+            let html = '';
+            faqs.forEach((faq, i) => {
+                html += '<div class="faq-item" data-index="' + i + '">' +
+                    '<button class="faq-question">' + faq.q +
+                    '<div class="faq-toggle">+</div></button>' +
+                    '<div class="faq-answer"><p>' + faq.a + '</p></div></div>';
+            });
+            faqList.innerHTML = html;
+
+            // FAQ accordion
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.querySelector('.faq-question').addEventListener('click', () => {
+                    const isOpen = item.classList.contains('open');
+                    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                    if (!isOpen) item.classList.add('open');
+                });
+            });
+        }
+
+        // Toast
+        function showToast(msg) {
+            const t = document.createElement('div');
+            t.className = 'toast';
+            t.innerHTML = '<div class="toast-icon">✓</div><span class="toast-message">' + msg + '</span>';
+            toastContainer.appendChild(t);
+            setTimeout(() => { t.classList.add('hide'); setTimeout(() => t.remove(), 300); }, 3000);
+        }
+
+        // Scroll effects
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const t = document.querySelector(a.getAttribute('href'));
+                if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+            });
+        });
+
+        // Mobile menu
+        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.add('show'));
+        mobileMenuClose.addEventListener('click', () => mobileMenu.classList.remove('show'));
+        mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => mobileMenu.classList.remove('show')));
+
+        // Init
+        renderProducts();
+        renderFAQs();
+    </script>
+</body>
+</html>
